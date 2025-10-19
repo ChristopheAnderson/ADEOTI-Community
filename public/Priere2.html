@@ -1,0 +1,3881 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- SEO Essentials -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="M0YMnRydz1Xph_7RUTkU4rUnhSL1x0pN9nHZHFoqTpQ" />
+
+    <!-- Title & Description -->
+    <title>ADEOTI Community – Communauté de prière pour étudiants à Abomey</title>
+    <meta name="description" content="Communauté de prière chrétienne ADEOTI à Abomey, Sogbo-Aliho. Un espace spirituel pour étudiants, animé par la foi et l'unité. Rejoignez-nous !">
+    <meta name="keywords" content="ADEOTI, communauté chrétienne, prière étudiants Abomey, sogbo aliho, bénin, spiritualité jeunesse">
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://adeoti-community.vercel.app/">
+
+    <!-- Geolocalisation -->
+    <meta name="geo.region" content="BJ-ZOU" />
+    <meta name="geo.placename" content="Abomey, Sogbo-Aliho" />
+    <meta name="geo.position" content="7.1820;1.9912" />
+    <meta name="ICBM" content="7.1820, 1.9912" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ADEOTI Community – Communauté de prière à Abomey" />
+    <meta property="og:description" content="Communauté chrétienne de prière pour étudiants à Sogbo-Aliho. Foi, entraide, louange, enseignement et unité." />
+    <meta property="og:image" content="https://adeoti-community.vercel.app/images/adeoti-cover.jpg" />
+    <meta property="og:url" content="https://adeoti-community.vercel.app/" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADEOTI Community – Communauté de prière à Abomey">
+    <meta name="twitter:description" content="Communauté de prière chrétienne pour étudiants à Abomey – Sogbo-Aliho.">
+    <meta name="twitter:image" content="https://adeoti-community.vercel.app/images/adeoti-cover.jpg">
+
+    <!-- Structured Data JSON-LD (Schema.org) -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ADEOTI Community",
+    "description": "Communauté de prière chrétienne pour étudiants à Abomey, Bénin.",
+    "url": "https://adeoti-community.vercel.app/",
+    "logo": "https://adeoti-community.vercel.app/images/adeoti-logo.png",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Quartier Sogbo-Aliho",
+        "addressLocality": "Abomey",
+        "addressRegion": "Zou",
+        "addressCountry": "BJ"
+    },
+    "sameAs": [
+        "https://www.linkedin.com/in/votreprofil",
+        "https://github.com/votreprofil",
+        "https://twitter.com/votreprofil"
+    ]
+    }
+    </script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b9ba14b0c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Font and Body Styling */
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #ffffff; /* White background for the entire screen */
+        }
+
+        /* Section Styling */
+        .section {
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 3rem 1rem;
+        }
+
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+            display: block;
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            color: #0000FF; /* Pure bold blue for nav links */
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #0000FF, #0000CC); /* Pure blue gradient */
+            transition: left 0.3s ease;
+        }
+
+        .nav-link.active::after,
+        .nav-link:hover::after {
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #0000CC; /* Slightly darker pure blue on hover */
+        }
+
+        /* Gradient Background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9); /* Light background for cards */
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Announcement Styling */
+        .announcement {
+            position: relative;
+            background: #f3f4f6; /* Light gray background for better contrast */
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: #1e3a8a; /* Deep blue text */
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .announcement:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .announcement h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e3a8a; /* Deep blue for headings */
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement h3 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 0.25rem;
+        }
+
+        .announcement p {
+            font-size: 1.2rem;
+            color: #374151; /* Dark gray for body text */
+            margin-bottom: 0.5rem;
+        }
+
+        .announcement .highlight {
+            color: #ef4444; /* Red for highlights */
+            font-weight: bold;
+        }
+
+        /* Typewriter Effect */
+        .typewriter::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a8a; /* Deep blue for carousel text */
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 0.625rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+
+        .carousel-control.prev {
+            left: 0.625rem;
+        }
+
+        .carousel-control.next {
+            right: 0.625rem;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: 300px;
+            }
+            .announcement .flex {
+                flex-direction: column;
+            }
+            .announcement .w-full {
+                width: 100%;
+                padding: 0.5rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        .modal:not(.hidden) {
+            display: flex;
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background: #ffffff; /* White background for modals */
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: #1e3a8a; /* Deep blue for modal text */
+        }
+
+        .modal-content h2,
+        .modal-content h3,
+        .modal-content h4,
+        .modal-content p,
+        .modal-content label,
+        .modal-content span {
+            color: #1e3a8a; /* Deep blue for all modal text */
+        }
+
+        .modal-content input,
+        .modal-content select,
+        .modal-content textarea {
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        .modal-content input:focus,
+        .modal-content select:focus,
+        .modal-content textarea:focus {
+            border-color: #3B82F6;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+
+        .modal-content button[type="submit"] {
+            background-color: #3B82F6;
+            color: #ffffff;
+        }
+
+        #login-modal .modal-content button[type="submit"] {
+            background-color: #10B981;
+            color: #ffffff;
+        }
+
+        .modal-content button[type="submit"]:hover {
+            background-color: #2563EB;
+        }
+
+        #login-modal .modal-content button[type="submit"]:hover {
+            background-color: #059669;
+        }
+
+        .modal-content a {
+            color: #3B82F6; /* Blue for links */
+        }
+
+        .modal-content a:hover {
+            text-decoration: underline;
+            color: #2563EB;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 0.625rem;
+            right: 0.625rem;
+            background: #f1f1f1;
+            border-radius: 50%;
+            width: 1.875rem;
+            height: 1.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .modal-close:hover {
+            background: #e5e5e5;
+        }
+
+        @media (max-width: 640px) {
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Hamburger Menu */
+        #mobile-menu-btn {
+            display: block;
+            padding: 0.5rem;
+        }
+
+        .hamburger-icon {
+            width: 24px;
+            height: 16px;
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .hamburger-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #1e3a8a; /* Deep blue for hamburger icon */
+            border-radius: 2px;
+            opacity: 1;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-icon span:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger-icon span:nth-child(2) {
+            top: 6px;
+        }
+
+        .hamburger-icon span:nth-child(3) {
+            top: 12px;
+        }
+
+        .hamburger-icon.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 6px;
+        }
+
+        .hamburger-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-icon.open span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 6px;
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateY(-100%);
+            background: #ffffff;
+        }
+
+        #mobile-menu:not(.hidden) {
+            transform: translateY(0);
+        }
+
+        #mobile-menu a {
+            color: #0000FF; /* Pure bold blue for mobile menu links */
+        }
+
+        #mobile-menu a:hover {
+            color: #0000CC; /* Slightly darker pure blue on hover */
+        }
+
+        /* Ensure buttons are visible when needed */
+        #reserve-btn:not(.hidden) {
+            display: block !important;
+        }
+
+        #cancel-reserve-btn:not(.hidden) {
+            display: block !important;
+        }
+
+        #login-prompt-btn:not(.hidden) {
+            display: block !important;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-person-praying text-2xl text-blue-600 mr-3"></i>
+                    <span class="text-xl font-bold text-gray-800">Prayer</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+                    <a href="#apropos" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Communicateur</a>
+                    <a href="#mediatheque" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Médiathèque</a>
+                    <a href="#calendrier" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Calendrier</a>
+                    <a href="#verset-bible" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Jeux-Bible</a>
+                    <a href="#blog" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Message</a>
+                    <a href="#communaute" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Communauté</a>
+                    <a href="#contact" class="nav-link px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none relative w-8 h-8 flex items-center justify-center" aria-label="Toggle mobile menu">
+                        <span class="hamburger-icon block">
+                            <span class="bar block w-6 h-0.5 bg-gray-700 absolute top-2 transition-all duration-300"></span>
+                            <span class="bar block w-6 h-0.5 bg-gray-700 absolute top-3.5 transition-all duration-300"></span>
+                            <span class="bar block w-6 h-0.5 bg-gray-700 absolute top-5 transition-all duration-300"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t transition-all duration-300 max-h-0 overflow-hidden">
+            <div class="px-4 pt-2 pb-3 space-y-2">
+                <a href="#accueil" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Accueil</a>
+                <a href="#apropos" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Communicateur</a>
+                <a href="#mediatheque" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Médiathèque</a>
+                <a href="#calendrier" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Calendrier</a>
+                <a href="#verset-bible" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Jeux-Bible</a>
+                <a href="#blog" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Message</a>
+                <a href="#communaute" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Communauté</a>
+                <a href="#contact" class="mobile-menu-link block px-4 py-2 text-gray-800 hover:bg-blue-50 hover:text-blue-600 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bars = document.querySelectorAll('.hamburger-icon .bar');
+    const mobileLinks = document.querySelectorAll('.mobile-menu-link');
+
+    // Toggle menu and hamburger icon
+    mobileMenuBtn.addEventListener('click', function () {
+        mobileMenu.classList.toggle('max-h-0');
+        mobileMenu.classList.toggle('max-h-screen');
+        
+        bars[0].classList.toggle('rotate-45');
+        bars[0].classList.toggle('top-3.5');
+        bars[1].classList.toggle('opacity-0');
+        bars[2].classList.toggle('-rotate-45');
+        bars[2].classList.toggle('top-3.5');
+    });
+
+    // Close menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            mobileMenu.classList.add('max-h-0');
+            mobileMenu.classList.remove('max-h-screen');
+            
+            bars[0].classList.remove('rotate-45');
+            bars[0].classList.remove('top-3.5');
+            bars[1].classList.remove('opacity-0');
+            bars[2].classList.remove('-rotate-45');
+            bars[2].classList.remove('top-3.5');
+        });
+    });
+    </script>
+
+    <style>
+    .bar {
+        transition: all 0.3s ease-in-out;
+    }
+    .hamburger-icon .rotate-45 {
+        transform: rotate(45deg);
+    }
+    .hamburger-icon .-rotate-45 {
+        transform: rotate(-45deg);
+    }
+    #mobile-menu {
+        transition: max-height 0.3s ease-in-out;
+    }
+    </style>
+
+    <!-- Page d'accueil -->
+    <section id="accueil" class="section active gradient-bg min-h-screen flex items-center pt-16 mb-0 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Annonce spéciale avec Carousel -->
+                <div class="announcement mt-8 mb-8 max-w-4xl mx-auto relative">
+                    <div class="carousel">
+                        <div class="carousel-inner" id="carouselInner">
+                            <div class="carousel-item">
+                                <img src="Communities_photos/Affiche1.jpg" alt="Event Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="Communities_photos/Affiche2.jpg" alt="Event Image 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="carousel-control next" onclick="moveCarousel(1)">&#10095;</button>
+                    </div>
+                </div>
+                <!-- Verse Section -->
+                <div class="mt-16">
+                    <div class="card-hover mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-1e3a8a">
+                            <i class="fas fa-book-open mr-2"></i>Verset du Jour
+                        </h3>
+                        <p class="text-lg italic text-374151" id="daily-verse">
+                            Chargement du verset...
+                        </p>
+                        <div class="flex gap-4 mt-2 justify-center">
+                            <button class="border-2 border-black rounded-full px-4 py-2 font-semibold text-black hover:bg-gray-200 transition-colors" onclick="showShareOptions()">
+                                <i class="fas fa-share-alt mr-2"></i>Partager
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                        <button id="register-btn" onclick="openRegistrationModal()" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors pulse-animation">
+                            <i class="fas fa-user-plus mr-2"></i>S'inscrire
+                        </button>
+                        <button id="login-btn" onclick="openLoginModal()" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors pulse-animation">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Se connecter
+                        </button>
+                        <button id="logout-btn" onclick="logout()" class="bg-red-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-red-700 transition-colors pulse-animation hidden">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Se déconnecter
+                        </button>
+                    </div>
+                    <div class="mt-6">
+                        <div class="floating" style="margin-top: 20px;">
+                            <i class="fas fa-hands-praying text-6xl mb-8 text-1e3a8a"></i>
+                        </div>
+                        <h3 class="text-4xl md:text-4xl font-bold mb-6 fade-in text-1e3a8a">
+                            <span class="typewriter" data-text="Séances de communication biblique"></span>
+                        </h3>
+                        <p class="text-xl md:text-2xl mb-8 fade-in text-374151">
+                            <span class="typewriter" data-text="Université de Sogbo-Aliho, Abomey, Bénin"></span>
+                        </p>
+                        <p class="text-lg mb-12 max-w-3xl mx-auto fade-in text-374151">
+                            <span class="typewriter" data-text="Rejoignez-nous chaque samedi pour des moments d'inspiration spirituelle, d'enseignement et de communion fraternelle guidés par notre docteur PhD."></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Affiche de la prochaine séance -->
+            <div class="card-hover">
+                <div class="grid md:grid-cols-2 gap-6 items-center">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-6 text-center">
+                        <i class="fas fa-bullhorn text-4xl mb-4 text-white"></i>
+                        <h2 class="text-2xl font-bold mb-2 text-white">PROCHAINE SÉANCE</h2>
+                        <div class="text-lg text-white">
+                            <p class="mb-1">📅 Samedi 21 Décembre 2025</p>
+                            <p class="mb-1">🕒 15h00 - 17h00</p>
+                            <p class="mb-1">📖 "La Foi qui Transforme"</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-1e3a8a">Détails de la Séance</h3>
+                        <ul class="space-y-2 flex flex-col items-center">
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i><span class="text-374151">Enseignement spirituel approfondi</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i><span class="text-374151">Temps de prière collective</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i><span class="text-374151">Partage de témoignages si possible</span></li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i><span class="text-374151">Chants et louanges</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Bouton de réservation et annulation -->
+            <div class="my-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="reserve-btn" onclick="reservePlace()" class="bg-yellow-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-yellow-600 transition-colors pulse-animation text-lg hidden">
+                    <i class="fas fa-calendar-plus mr-2"></i>Réserver ma place
+                </button>
+                <button id="cancel-reserve-btn" onclick="cancelReservation()" class="bg-red-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors text-lg hidden">
+                    <i class="fas fa-calendar-minus mr-2"></i>Rétirer ma place
+                </button>
+                <button id="login-prompt-btn" onclick="openLoginModal()" class="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-colors pulse-animation text-lg">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Se connecter pour réserver
+                </button>
+            </div>
+            <!-- Tableau des réservations -->
+            <div class="card-hover mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-blue-600">
+                    <i class="fas fa-users mr-2"></i>Personnes Inscrites (Places Réservées)
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-gray-700 border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-2 px-4 font-semibold text-blue-600">Nom</th>
+                                <th class="text-left py-2 px-4 font-semibold text-blue-600">Prénom</th>
+                                <th class="text-left py-2 px-4 font-semibold text-blue-600">Téléphone</th>
+                                <th class="text-left py-2 px-4 font-semibold text-blue-600">Date d'inscription</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservations-table">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Boutons d'actions -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <button onclick="showPrayerSection('calendrier')" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-calendar mr-2"></i>Voir le Calendrier
+                </button>
+                <button onclick="showPrayerSection('mediatheque')" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-colors">
+                    <i class="fas fa-video mr-2"></i>Regarder les Vidéos
+                </button>
+                <button onclick="showPrayerSection('communaute')" class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition-colors">
+                    <i class="fas fa-comments mr-2"></i>Forum
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeRegistrationModal()">×</span>
+            <h2 class="text-2xl font-bold mb-6">Inscription aux Séances</h2>
+            <form id="registration-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-semibold mb-2">Prénom *</label>
+                        <input type="text" name="firstName" class="w-full px-4 py-3 rounded-lg" placeholder="Votre prénom" required>
+                    </div>
+                    <div>
+                        <label class="block font-semibold mb-2">Nom *</label>
+                        <input type="text" name="lastName" class="w-full px-4 py-3 rounded-lg" placeholder="Votre nom" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Email *</label>
+                    <input type="email" name="email" class="w-full px-4 py-3 rounded-lg" placeholder="votre@email.com" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Téléphone *</label>
+                    <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg" placeholder="+229 XX XX XX XX" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Mot de passe *</label>
+                    <input type="password" name="password" class="w-full px-4 py-3 rounded-lg" placeholder="Votre mot de passe" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Ville</label>
+                    <input type="text" name="city" class="w-full px-4 py-3 rounded-lg" placeholder="Votre ville">
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Comment avez-vous connu nos séances ?</label>
+                    <select name="source" class="w-full px-4 py-3 rounded-lg">
+                        <option>Sélectionnez une option</option>
+                        <option>Réseaux sociaux</option>
+                        <option>Recommandation d'un ami</option>
+                        <option>Université</option>
+                        <option>Publicité locale</option>
+                        <option>Autre</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Message ou questions (optionnel)</label>
+                    <textarea name="message" class="w-full px-4 py-3 rounded-lg h-32" placeholder="Partagez vos attentes ou posez vos questions..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold transition-colors">
+                    <i class="fas fa-paper-plane mr-2"></i>S'inscrire
+                </button>
+            </form>
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-4">
+                    <i class="fas fa-info-circle mr-2 text-blue-400"></i>Guide pour les Nouveaux
+                </h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-green-400 pl-4">
+                        <h4 class="font-semibold text-1e3a8a">Tenue vestimentaire</h4>
+                        <p class="text-sm text-374151">Portez des vêtements sobres et respectueux.</p>
+                    </div>
+                    <div class="border-l-4 border-purple-400 pl-4">
+                        <h4 class="font-semibold text-1e3a8a">Participation</h4>
+                        <p class="text-sm text-374151">Participez aux chants et aux prières. Respectez les moments de silence.</p>
+                    </div>
+                    <div class="border-l-4 border-orange-400 pl-4">
+                        <h4 class="font-semibold text-1e3a8a">Après la séance</h4>
+                        <p class="text-sm text-374151">Prenez le temps d'échanger avec les autres participants et de partager vos réflexions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-xl font-bold mb-4">
+                    <i class="fas fa-question-circle mr-2 text-green-400"></i>Questions Fréquentes
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold mb-2 text-1e3a8a">Les séances sont-elles gratuites ?</h4>
+                        <p class="text-sm text-374151">Oui, toutes nos séances sont entièrement gratuites. Les dons sont acceptés mais non obligatoires et sans exigence.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2 text-1e3a8a">Peut-on participer en ligne ?</h4>
+                        <p class="text-sm text-374151">Oui, mais nous ne sommes pas encore à ce niveau, nous l'envisageons sous peu.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2 text-1e3a8a">Y a-t-il une limite d'âge ?</h4>
+                        <p class="text-sm text-374151">Non, nos séances sont ouvertes à tous, quel que soit l'âge. C'est la famille et vous êtes les bienvenues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeLoginModal()">×</span>
+            <h2 class="text-2xl font-bold mb-6">Se connecter</h2>
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label class="block font-semibold mb-2">Email *</label>
+                    <input type="email" name="email" class="w-full px-4 py-3 rounded-lg" placeholder="votre@email.com" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Mot de passe *</label>
+                    <input type="password" name="password" class="w-full px-4 py-3 rounded-lg" placeholder="Votre mot de passe" required>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" name="remember" class="mr-2">
+                    <span class="text-sm text-374151">Se souvenir de moi</span>
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold transition-colors">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Se connecter
+                </button>
+                <p class="text-sm text-center text-374151">
+                    Pas de compte ? <a href="#" onclick="closeLoginModal(); openRegistrationModal();" class="hover:underline">S'inscrire</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        let currentLanguage = 'french'; // Track current language
+        let verseData = { french: '', english: '', reference: '' }; // Store both language versions
+        const HF_API_KEY = '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';
+        const WEBSITE_URL = 'https://bible-api.com/';
+        const textCache = {};
+
+        function moveCarousel(direction) {
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            const offset = -currentIndex * 100;
+            document.getElementById('carouselInner').style.transform = `translateX(${offset}%)`;
+        }
+
+        async function convertText(inputText, sourceLang = 'EN', targetLang = 'FR') {
+            if (sourceLang === targetLang || !inputText) return inputText;
+            const cacheId = `${inputText}:${sourceLang}:${targetLang}`;
+            if (textCache[cacheId]) return textCache[cacheId];
+            try {
+                const model = sourceLang === 'EN' && targetLang === 'FR'
+                    ? 'Helsinki-NLP/opus-mt-en-fr'
+                    : 'Helsinki-NLP/opus-mt-fr-en';
+                const response = await fetch(`https://api-inference.huggingface.co/models/${model}`, {
+                    headers: { 'Authorization': `Bearer ${HF_API_KEY}`, 'Content-Type': 'application/json' },
+                    method: 'POST',
+                    body: JSON.stringify({ inputs: inputText })
+                });
+                if (!response.ok) throw new Error(`Translation error (${response.status})`);
+                const resultData = await response.json();
+                console.log(`Translation response for ${targetLang}:`, resultData);
+                const translatedOutput = resultData[0]?.translation_text || inputText;
+                textCache[cacheId] = translatedOutput;
+                return translatedOutput;
+            } catch (err) {
+                console.error(`Translation error (${targetLang}):`, err);
+                return inputText;
+            }
+        }
+
+        async function fetchVerse() {
+            try {
+                const response = await fetch('https://bible-api.com/data/web/random');
+                const data = await response.json();
+                console.log('API response:', data);
+                const verse = data.random_verse;
+                if (!verse || !verse.text || !verse.book || !verse.chapter || !verse.verse) {
+                    throw new Error('Invalid verse data');
+                }
+                const englishText = verse.text.trim();
+                const frenchText = await convertText(englishText, 'EN', 'FR');
+                const verseInfo = {
+                    french: frenchText,
+                    english: englishText,
+                    reference: `${verse.book} ${verse.chapter}:${verse.verse}`
+                };
+                console.log('Fetched verse:', verseInfo);
+                return verseInfo;
+            } catch (error) {
+                console.error('Error fetching verse:', error);
+                return null;
+            }
+        }
+
+        async function updateDailyVerse() {
+            const today = new Date().toDateString();
+            const lastUpdate = localStorage.getItem('lastVerseDate');
+            let verseInfo;
+
+            if (lastUpdate === today) {
+                const storedVerse = localStorage.getItem('dailyVerse');
+                if (storedVerse) {
+                    verseInfo = JSON.parse(storedVerse);
+                    console.log('Loaded from localStorage:', verseInfo);
+                    if (!verseInfo.french || !verseInfo.english || !verseInfo.reference) {
+                        console.warn('Corrupted localStorage data, clearing...');
+                        localStorage.removeItem('dailyVerse');
+                        localStorage.removeItem('lastVerseDate');
+                    } else {
+                        verseData = verseInfo;
+                        displayVerse(verseInfo[currentLanguage]);
+                        return;
+                    }
+                }
+            }
+
+            verseInfo = await fetchVerse();
+            if (verseInfo) {
+                verseData = verseInfo;
+                localStorage.setItem('dailyVerse', JSON.stringify(verseInfo));
+                localStorage.setItem('lastVerseDate', today);
+                displayVerse(verseInfo[currentLanguage]);
+            } else {
+                document.getElementById('daily-verse').textContent = 'Impossible de charger le verset.';
+            }
+        }
+
+        function displayVerse(text) {
+            const verseElement = document.getElementById('daily-verse');
+            if (verseElement) {
+                if (!text || text === 'undefined') {
+                    console.warn('Attempted to display invalid verse text:', text);
+                    verseElement.textContent = 'Impossible de charger le verset.';
+                } else {
+                    verseElement.textContent = `"${text}" - ${verseData.reference}`;
+                }
+            }
+        }
+
+        async function toggleVerseLanguage() {
+            currentLanguage = currentLanguage === 'french' ? 'english' : 'french';
+            const translateBtn = document.getElementById('translate-btn');
+            translateBtn.innerHTML = currentLanguage === 'french'
+                ? '<i class="fas fa-language mr-2"></i>Traduire en Anglais'
+                : '<i class="fas fa-language mr-2"></i>Traduire en Français';
+            const sourceLang = currentLanguage === 'french' ? 'EN' : 'FR';
+            const targetLang = currentLanguage === 'french' ? 'FR' : 'EN';
+            const textToDisplay = currentLanguage === 'french' ? verseData.french : verseData.english;
+            if (!textToDisplay) {
+                const sourceText = currentLanguage === 'french' ? verseData.english : verseData.french;
+                const translatedText = await convertText(sourceText, sourceLang, targetLang);
+                verseData[currentLanguage] = translatedText;
+                localStorage.setItem('dailyVerse', JSON.stringify(verseData));
+            }
+            displayVerse(verseData[currentLanguage]);
+        }
+
+        async function showShareOptions() {
+            const verseElement = document.getElementById('daily-verse');
+            const verseText = verseElement.textContent + `\n${WEBSITE_URL}`;
+
+            const shareData = {
+                title: 'Verset du Jour',
+                text: verseText,
+                url: WEBSITE_URL
+            };
+
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                    return;
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            }
+
+            const choice = prompt('Partager en tant que : 1) Texte, 2) Image, 3) PDF');
+            if (choice === '1') {
+                navigator.clipboard.writeText(verseText).then(() => {
+                    alert('Verset copié dans le presse-papiers !');
+                });
+            } else if (choice === '2') {
+                html2canvas(verseElement).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const link = document.createElement('a');
+                    link.href = imgData;
+                    link.download = 'verse.png';
+                    link.click();
+                });
+            } else if (choice === '3') {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                doc.text(verseText, 10, 10);
+                doc.save('verse.pdf');
+            }
+        }
+
+        function openRegistrationModal() {
+            document.getElementById('registration-modal').classList.remove('hidden');
+        }
+
+        function closeRegistrationModal() {
+            document.getElementById('registration-modal').classList.add('hidden');
+        }
+
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+        }
+
+        function logout() {
+            fetch('/logout', { method: 'POST' })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.message) {
+                        alert(result.message);
+                        updateButtonVisibility(false, false);
+                        fetchReservations();
+                    } else {
+                        alert(result.error || 'Erreur lors de la déconnexion');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during logout:', error);
+                    alert('Erreur lors de la déconnexion');
+                });
+        }
+
+        function updateButtonVisibility(isLoggedIn, hasReservation = false) {
+            const registerBtn = document.getElementById('register-btn');
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const reserveBtn = document.getElementById('reserve-btn');
+            const cancelReserveBtn = document.getElementById('cancel-reserve-btn');
+            const loginPromptBtn = document.getElementById('login-prompt-btn');
+
+            console.log('updateButtonVisibility called:', { isLoggedIn, hasReservation });
+            registerBtn.classList.toggle('hidden', isLoggedIn);
+            loginBtn.classList.toggle('hidden', isLoggedIn);
+            logoutBtn.classList.toggle('hidden', !isLoggedIn);
+            reserveBtn.classList.toggle('hidden', !isLoggedIn || hasReservation);
+            cancelReserveBtn.classList.toggle('hidden', !isLoggedIn || !hasReservation);
+            loginPromptBtn.classList.toggle('hidden', isLoggedIn);
+
+            console.log('Button states:', {
+                registerBtnHidden: registerBtn.classList.contains('hidden'),
+                loginBtnHidden: loginBtn.classList.contains('hidden'),
+                logoutBtnHidden: logoutBtn.classList.contains('hidden'),
+                reserveBtnHidden: reserveBtn.classList.contains('hidden'),
+                cancelReserveBtnHidden: cancelReserveBtn.classList.contains('hidden'),
+                loginPromptBtnHidden: loginPromptBtn.classList.contains('hidden')
+            });
+        }
+
+        async function fetchReservations() {
+            try {
+                const response = await fetch('/reservations');
+                const reservations = await response.json();
+                if (response.ok) {
+                    const tableBody = document.getElementById('reservations-table');
+                    tableBody.innerHTML = '';
+                    reservations.forEach(res => {
+                        const row = document.createElement('tr');
+                        row.className = 'border-b border-gray-100';
+                        row.innerHTML = `
+                            <td class="py-2 px-4">${res.last_name}</td>
+                            <td class="py-2 px-4">${res.first_name}</td>
+                            <td class="py-2 px-4">${res.phone}</td>
+                            <td class="py-2 px-4">${new Date(res.created_at).toLocaleDateString('fr-FR')}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    console.error('Error fetching reservations:', reservations.error);
+                }
+            } catch (error) {
+                console.error('Error fetching reservations:', error);
+            }
+        }
+
+        async function reservePlace() {
+            try {
+                const response = await fetch('/reserve', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    updateButtonVisibility(true, true); // Update buttons: show cancel button
+                    fetchReservations(); // Refresh table
+                } else {
+                    alert(result.error);
+                }
+            } catch (error) {
+                console.error('Erreur lors de la réservation:', error);
+                alert('Erreur lors de la réservation');
+            }
+        }
+
+        async function cancelReservation() {
+            try {
+                const response = await fetch('/cancel-reservation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    updateButtonVisibility(true, false); // Update buttons: show reserve button
+                    fetchReservations(); // Refresh table to remove the user's row
+                } else {
+                    alert(result.error);
+                }
+            } catch (error) {
+                console.error('Erreur lors de l\'annulation de la réservation:', error);
+                alert('Erreur lors de l\'annulation de la réservation');
+            }
+        }
+
+        document.getElementById('registration-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    closeRegistrationModal();
+                } else {
+                    alert(result.error);
+                }
+            } catch (error) {
+                console.error('Erreur lors de l\'inscription:', error);
+                alert('Erreur lors de l\'inscription');
+            }
+        });
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message);
+                    closeLoginModal();
+                    updateButtonVisibility(true, result.user.participe || false);
+                    fetchReservations();
+                } else {
+                    alert(result.error);
+                }
+            } catch (error) {
+                console.error('Erreur lors de la connexion:', error);
+                alert('Erreur lors de la connexion');
+            }
+        });
+
+        // Check login status on page load
+        async function checkLoginStatus() {
+            try {
+                const response = await fetch('/check-session');
+                const result = await response.json();
+                console.log('checkLoginStatus response:', result);
+                const isLoggedIn = result.isLoggedIn || false;
+                const hasReservation = isLoggedIn ? (result.user?.participe || false) : false;
+                updateButtonVisibility(isLoggedIn, hasReservation);
+            } catch (error) {
+                console.error('Error checking session:', error);
+                updateButtonVisibility(false, false);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkLoginStatus();
+            updateDailyVerse();
+            fetchReservations();
+        });
+
+        // Placeholder for showPrayerSection
+        function showPrayerSection(section) {
+            console.log(`Navigating to ${section}`);
+            // Implement section navigation logic here
+        }
+    </script>
+
+   <script>
+        // Debounce function for canvas resizing
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Typewriter effect for dynamic text
+        const typewriterElements = document.querySelectorAll('.typewriter');
+        typewriterElements.forEach((element, index) => {
+            const text = element.getAttribute('data-text');
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                } else {
+                    setTimeout(() => {
+                        element.textContent = '';
+                        i = 0;
+                        type();
+                    }, 2000);
+                }
+            }
+
+            setTimeout(type, index * 1000);
+        });
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function moveCarousel(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentSlide * 100;
+            document.getElementById('carouselInner').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Auto-slide every 5 seconds
+        setInterval(() => moveCarousel(1), 5000);
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.querySelector('#mobile-menu-btn .fa-bars');
+            const hamburgerFallback = document.querySelector('#mobile-menu-btn .hamburger-icon');
+            if (mobileMenu && hamburgerIcon) {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('open');
+                hamburgerIcon.classList.toggle('fa-bars');
+                hamburgerIcon.classList.toggle('fa-times');
+                if (hamburgerFallback) {
+                    hamburgerFallback.classList.toggle('open');
+                }
+            }
+        });
+
+        // Section navigation
+        function showPrayerSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const navItems = document.querySelectorAll('.nav-link');
+            const mobileNavItems = document.querySelectorAll('#mobile-menu a');
+
+            sections.forEach(section => {
+                section.classList.remove('active', 'fade-in');
+                section.style.display = 'none';
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            mobileNavItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                setTimeout(() => {
+                    targetSection.classList.add('active', 'fade-in');
+                }, 10);
+            }
+
+            const targetNavItem = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            const targetMobileNavItem = document.querySelector(`#mobile-menu a[href="#${sectionId}"]`);
+            if (targetNavItem) targetNavItem.classList.add('active');
+            if (targetMobileNavItem) targetMobileNavItem.classList.add('active');
+
+            window.scrollTo({ top: targetSection ? targetSection.offsetTop - 80 : 0, behavior: 'smooth' });
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenu && mobileMenuBtn) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('open');
+                const hamburgerIcon = document.querySelector('#mobile-menu-btn .fa-bars, #mobile-menu-btn .fa-times');
+                const hamburgerFallback = document.querySelector('#mobile-menu-btn .hamburger-icon');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('fa-times');
+                    hamburgerIcon.classList.add('fa-bars');
+                }
+                if (hamburgerFallback) {
+                    hamburgerFallback.classList.remove('open');
+                }
+            }
+        }
+
+        // Modal handling
+        function openRegistrationModal() {
+            const modal = document.getElementById('registration-modal');
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeRegistrationModal() {
+            const modal = document.getElementById('registration-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+            }
+        }
+
+        function openLoginModal() {
+            const modal = document.getElementById('login-modal');
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeLoginModal() {
+            const modal = document.getElementById('login-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+            }
+        }
+
+        // DOMContentLoaded event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Enable registration button after 1 second
+            const registerBtn = document.getElementById('register-btn');
+            if (registerBtn) {
+                setTimeout(() => {
+                    registerBtn.removeAttribute('disabled');
+                }, 1000);
+            }
+
+            // Navigation event listeners
+            document.querySelectorAll('.nav-link, #mobile-menu a, button[onclick*="showPrayerSection"]').forEach(element => {
+                element.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = element.getAttribute('href')?.substring(1) || element.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    showPrayerSection(sectionId);
+                });
+            });
+
+            // Modal close buttons
+            document.querySelectorAll('.modal-close').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    closeRegistrationModal();
+                    closeLoginModal();
+                });
+            });
+
+            // Close modals when clicking outside
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeRegistrationModal();
+                        closeLoginModal();
+                    }
+                });
+            });
+
+            // Load default section
+            showPrayerSection('accueil');
+
+            // Check if Font Awesome loaded
+            const fontAwesomeLoaded = document.querySelector('.fa-bars')?.offsetParent !== null;
+            if (!fontAwesomeLoaded) {
+                console.warn('Font Awesome failed to load, showing fallback hamburger icon');
+                const hamburgerIcon = document.querySelector('#mobile-menu-btn .fa-bars');
+                const hamburgerFallback = document.querySelector('#mobile-menu-btn .hamburger-icon');
+                if (hamburgerIcon && hamburgerFallback) {
+                    hamburgerIcon.classList.add('hidden');
+                    hamburgerFallback.classList.remove('hidden');
+                }
+            }
+        });
+
+        // Placeholder functions
+        function showReservationModal() { alert('Reservation modal to be implemented'); }
+    </script>
+
+
+
+
+   <style>
+/* Global Font */
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Body Background */
+body {
+    background: #ffffff; /* Changed to white background for the entire screen */
+}
+
+/* Section Styling */
+.section {
+    min-height: 100vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 3rem 1rem; /* Unified padding */
+    background: #ffffff; /* Ensure section background is white */
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    display: block;
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #3B82F6, #1D4ED8);
+    transition: left 0.3s ease;
+}
+
+.nav-link.active::after,
+.nav-link:hover::after {
+    left: 0;
+}
+
+/* Card Styling */
+.card-hover {
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9); /* Light background for cards */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Announcement Styling */
+.announcement {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6); /* Light gradient for announcement */
+    border-radius: 10px;
+    padding: 20px;
+    color: #1e3a8a; /* Darker text for contrast */
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.announcement:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.announcement h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1e3a8a; /* Consistent with text color */
+    margin-bottom: 10px;
+}
+
+.announcement h3 {
+    font-size: 1.5rem;
+    color: #1e3a8a;
+    margin-bottom: 5px;
+}
+
+.announcement p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.announcement .highlight {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Typewriter Effect */
+.typewriter::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Carousel Styles */
+.carousel {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement .flex {
+        flex-direction: column;
+    }
+    .announcement .w-full {
+        width: 100%;
+        padding: 0.5rem;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.modal:not(.hidden) {
+    display: flex;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-blend-mode: overlay;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: #ffffff; /* White background for modal */
+    color: #1e3a8a; /* Darker text for contrast */
+}
+
+#registration-modal .modal-content,
+#login-modal .modal-content {
+    background: #ffffff; /* Override background images for consistency */
+}
+
+.modal-content h2,
+.modal-content h3,
+.modal-content h4,
+.modal-content p,
+.modal-content label,
+.modal-content span {
+    color: #1e3a8a; /* Consistent text color */
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+    border-color: #3B82F6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.modal-content button[type="submit"] {
+    background-color: #3B82F6;
+}
+
+#login-modal .modal-content button[type="submit"] {
+    background-color: #10B981;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #2563EB;
+}
+
+#login-modal .modal-content button[type="submit"]:hover {
+    background-color: #059669;
+}
+
+.modal-content a {
+    color: #60A5FA;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    border: 2px solid #333;
+}
+
+.modal-close:hover {
+    background: #e5e5e5;
+}
+
+@media (max-width: 640px) {
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+/* Hamburger Menu */
+#mobile-menu-btn {
+    display: block;
+    padding: 0.5rem;
+}
+
+.hamburger-icon {
+    width: 24px;
+    height: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 6px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 12px;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 6px;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 6px;
+}
+
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+}
+
+#mobile-menu:not(.hidden) {
+    transform: translateY(0);
+}
+
+/* Communicateur Section Styling */
+#apropos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #ffffff; /* White background */
+    color: #1e3a8a; /* Primary text color for contrast */
+}
+
+#apropos .glass-card {
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque for visibility */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    border-radius: 1rem;
+    padding: 2rem; /* Increased padding for better spacing */
+}
+
+#apropos h3, #apropos h4 {
+    color: #1e3a8a; /* Consistent heading color */
+    font-weight: 700;
+}
+
+#apropos p, #apropos span {
+    color: #374151; /* Darker text for readability */
+}
+
+#apropos .bg-indigo-100 {
+    background: #f3f4f6; /* Lighter, neutral background for historical section */
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#apropos .bg-indigo-600, #apropos .bg-purple-600, #apropos .bg-indigo-800 {
+    background: #2563eb; /* Unified color for timeline markers */
+}
+
+#apropos iframe {
+    border-radius: 1rem; /* Consistent border radius for map */
+    width: 100%;
+    height: 300px;
+}
+
+/* Animations for Communicateur Section */
+#apropos .fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#apropos .scale-hover:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+    </style>
+
+
+
+    <section id="apropos" class="section gradient-bg py-12 sm:py-16 lg:py-20 min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-10 sm:mb-12 lg:mb-16 mt-8 animate__animated fade-in-up">
+                <p class="sm:pt-4 text-base sm:text-lg lg:text-xl text-gray-100 max-w-3xl mx-auto">
+                    Découvrez l'histoire et la mission de nos séances de prière
+                </p>
+            </div>
+
+            <!-- Dr. Adeoti & University -->
+            <div class="grid gap-6 sm:gap-8 md:grid-cols-2 items-center mb-10 sm:mb-12 lg:mb-16">
+                <div class="glass-card rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">
+                        <i class="fas fa-user-graduate mr-2 text-yellow-400"></i>Dr. ADEOTI Guy O.
+                    </h3>
+                    <p class="text-sm sm:text-base text-gray-100 mb-4">
+                        Titulaire d'un PhD en Génie-Civil, le Dr. Adeoti est communicateur en sciences religieuses, combinant une formation académique rigoureuse avec une profonde expérience spirituelle. Fort de plus de 15 ans d'enseignement universitaire, il consacre sa vie à l'étude et à la transmission des valeurs spirituelles.
+                    </p>
+                    <p class="text-sm sm:text-base text-gray-100 mb-4">
+                        Passionné par l'accompagnement spirituel, il a initié ces séances de prière pour créer un espace de recueillement et d'enseignement accessible à tous, dans le cadre prestigieux de l'université de Sogbo-Aliho.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <i class="fas fa-graduation-cap text-indigo-400 text-lg sm:text-xl"></i>
+                        <span class="text-sm sm:text-base text-gray-100">PhD en Génie-Civil</span>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-2">
+                        <i class="fas fa-chalkboard-teacher text-indigo-400 text-lg sm:text-xl"></i>
+                        <span class="text-sm sm:text-base text-gray-100">15+ ans d'enseignement</span>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl p-2 sm:p-4 shadow-2xl animate__animated fade-in-up scale-hover flex justify-center items-center" style="animation-delay: 0.4s;">
+                    <img src="Communities_photos\IMG-20250713-WA0014.jpg" alt="Dr. ADEOTI Guy O." class="w-full sm:w-auto max-h-96 object-cover rounded-xl">
+                </div>
+                <div class="glass-card rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 0.4s;">
+                    <i class="fas fa-university text-4xl sm:text-5xl text-indigo-400 mb-4"></i>
+                    <h4 class="text-lg sm:text-xl font-bold text-white mb-4">Université de Sogbo-Aliho</h4>
+                    <p class="text-sm sm:text-base text-gray-100">
+                        Située à Abomey, au cœur du Bénin, l'université de Sogbo-Aliho est un centre d'excellence académique qui accueille nos séances de prière chaque samedi dans un environnement propice à la réflexion et au recueillement.
+                    </p>
+                </div>
+                <div class="glass-card rounded-xl p-2 sm:p-4 shadow-2xl scale-hover">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7652.123456!2d1.99119!3d7.18286!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNy4xODI4NiwgMS45OTExOQ!5e0!3m2!1sfr!2s!4v1699999999999!5m2!1sfr!2s"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <!-- Mission, Vision, Valeurs -->
+            <div class="grid gap-6 sm:gap-8 md:grid-cols-3 mb-10 sm:mb-12 lg:mb-16">
+                <div class="text-center glass-card rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 0.6s;">
+                    <i class="fas fa-heart text-3xl sm:text-4xl text-red-400 mb-4"></i>
+                    <h4 class="text-lg sm:text-xl font-bold text-white mb-4">Mission</h4>
+                    <p class="text-sm sm:text-base text-gray-100">
+                        Offrir un espace de spiritualité et d'enseignement pour renforcer la foi et créer des liens communautaires solides.
+                    </p>
+                </div>
+                <div class="text-center glass-card rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 0.8s;">
+                    <i class="fas fa-eye text-3xl sm:text-4xl text-indigo-400 mb-4"></i>
+                    <h4 class="text-lg sm:text-xl font-bold text-white mb-4">Vision</h4>
+                    <p class="text-sm sm:text-base text-gray-100">
+                        Devenir un phare spirituel qui inspire et guide les âmes vers l'épanouissement personnel et communautaire.
+                    </p>
+                </div>
+                <div class="text-center glass-card rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 1s;">
+                    <i class="fas fa-users text-3xl sm:text-4xl text-purple-400 mb-4"></i>
+                    <h4 class="text-lg sm:text-xl font-bold text-white mb-4">Valeurs</h4>
+                    <p class="text-sm sm:text-base text-gray-100">
+                        Amour, compassion, sagesse, unité et service désintéressé au profit de la communauté.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Historique -->
+            <div class="bg-indigo-100 rounded-xl p-6 sm:p-8 shadow-2xl animate__animated fade-in-up" style="animation-delay: 1.2s;">
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center">
+                    <i class="fas fa-history mr-2 text-indigo-600"></i>Historique
+                </h3>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-900">2019 - Les Débuts</h4>
+                            <p class="text-sm sm:text-base text-gray-700">Première séance de prière organisée dans une petite salle de l'université avec 15 participants.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-purple-600 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-900">2020-2021 - Adaptation</h4>
+                            <p class="text-sm sm:text-base text-gray-700">Adaptation aux contraintes de streaming en ligne et maintien de la communauté.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-indigo-800 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h4 class="text-base sm:text-lg font-bold text-gray-900">2024-2025 - Expansion</h4>
+                            <p class="text-sm sm:text-base text-gray-700">Croissance de la communauté avec plus de 70 participants réguliers et création de ce site web.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- verset-bible -->
+    <section id="verset-bible" class="section py-12 sm:py-16 lg:py-20 min-h-screen">
+        <!-- page principale (index.html) -->
+        <iframe src="jeux_biblique.html" width="100%" height="600" style="border:none;" class="margin-y-8"></iframe>
+
+        <!-- index.html -->
+    <!-- <div id="contenu"></div>
+
+    <script>
+    fetch("jeux_biblique.html")
+        .then(response => response.text())
+        .then(html => {
+        document.getElementById("contenu").innerHTML = html;
+        })
+        .catch(err => console.error("Erreur de chargement :", err));
+    </script> -->
+
+
+    <!-- index.html -->
+    <!-- <inclusion-page></inclusion-page>
+
+    <script>
+    class InclusionPage extends HTMLElement {
+    connectedCallback() {
+        fetch('jeux_biblique.html')
+        .then(res => res.text())
+        .then(html => (this.innerHTML = html));
+    }
+    }
+    customElements.define('inclusion-page', InclusionPage);
+    </script> -->
+
+
+    </section>
+
+
+
+    
+
+
+
+
+    <!-- Calendrier -->
+    <section id="calendrier" class="section bg-gray-50 py-20 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Calendrier des Séances</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Planifiez votre participation aux prochaines séances de prière
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Calendar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                            <i class="fas fa-calendar-alt mr-3 text-blue-600"></i>Décembre 2025
+                        </h3>
+                        <div class="grid grid-cols-7 gap-2 mb-4">
+                            <div class="text-center font-semibold text-gray-600 py-2">Dim</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Lun</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Mar</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Mer</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Jeu</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Ven</div>
+                            <div class="text-center font-semibold text-gray-600 py-2">Sam</div>
+                        </div>
+                        <div class="grid grid-cols-7 gap-2">
+                            <div class="text-center py-2 text-gray-400">1</div>
+                            <div class="text-center py-2 text-gray-400">2</div>
+                            <div class="text-center py-2 text-gray-400">3</div>
+                            <div class="text-center py-2 text-gray-400">4</div>
+                            <div class="text-center py-2 text-gray-400">5</div>
+                            <div class="text-center py-2 text-gray-400">6</div>
+                            <div class="text-center py-2 bg-blue-600 text-white rounded-full cursor-pointer hover:bg-blue-700 transition-colors">7</div>
+                            <div class="text-center py-2">8</div>
+                            <div class="text-center py-2">9</div>
+                            <div class="text-center py-2">10</div>
+                            <div class="text-center py-2">11</div>
+                            <div class="text-center py-2">12</div>
+                            <div class="text-center py-2">13</div>
+                            <div class="text-center py-2 bg-blue-600 text-white rounded-full cursor-pointer hover:bg-blue-700 transition-colors">14</div>
+                            <div class="text-center py-2">15</div>
+                            <div class="text-center py-2">16</div>
+                            <div class="text-center py-2">17</div>
+                            <div class="text-center py-2">18</div>
+                            <div class="text-center py-2">19</div>
+                            <div class="text-center py-2">20</div>
+                            <div class="text-center py-2 bg-blue-600 text-white rounded-full cursor-pointer hover:bg-blue-700 transition-colors pulse-animation">21</div>
+                            <div class="text-center py-2">22</div>
+                            <div class="text-center py-2">23</div>
+                            <div class="text-center py-2">24</div>
+                            <div class="text-center py-2">25</div>
+                            <div class="text-center py-2">26</div>
+                            <div class="text-center py-2">27</div>
+                            <div class="text-center py-2 bg-blue-600 text-white rounded-full cursor-pointer hover:bg-blue-700 transition-colors">28</div>
+                            <div class="text-center py-2">29</div>
+                            <div class="text-center py-2">30</div>
+                            <div class="text-center py-2">31</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar (Horaires, Lieu, Notifications) -->
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-clock mr-2 text-blue-600"></i>Horaires
+                        </h4>
+                        <div class="space-y-2">
+                            <p class="text-gray-600"><strong>Jour:</strong> Chaque Samedi</p>
+                            <p class="text-gray-600"><strong>Heure:</strong> 15h00 - 17h00</p>
+                            <p class="text-gray-600"><strong>Accueil:</strong> 14h45</p>
+                            <p class="text-gray-600"><strong>Fin:</strong> 17h15</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>Lieu
+                        </h4>
+                        <p class="text-gray-600 mb-3">
+                            <strong>Université de Sogbo-Aliho</strong><br>
+                            Abomey, Bénin<br>
+                            Salle 200 places Principal
+                        </p>
+                        <a class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors" href="#apropos">Itinéraire</a>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-bell mr-2 text-blue-600"></i>Notifications
+                        </h4>
+                        <p class="text-gray-600 mb-3">Recevez des rappels pour les séances</p>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span class="text-gray-700">Email</span>
+                            </label>
+                            <!-- <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span class="text-gray-700">SMS</span>
+                            </label> -->
+                            <label class="flex items-center">
+                                <input type="checkbox" class="mr-2">
+                                <span class="text-gray-700">WhatsApp</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prochaines Séances -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                            <i class="fas fa-list mr-3 text-blue-600"></i>Prochaines Séances
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-600 pl-4 py-2">
+                                <h4 class="font-bold text-gray-800">Samedi 14 Décembre 2025</h4>
+                                <p class="text-gray-600"><strong>Thème:</strong> "La Foi qui Transforme"</p>
+                                <p class="text-gray-600"><strong>Tenue:</strong> Blanc et bleu recommandés</p>
+                                <p class="text-gray-600"><strong>Particularité:</strong> Séance spéciale de fin d'année</p>
+                            </div>
+                            <div class="border-l-4 border-indigo-600 pl-4 py-2">
+                                <h4 class="font-bold text-gray-800">Samedi 21 Décembre 2025</h4>
+                                <p class="text-gray-600"><strong>Thème:</strong> "Gratitude et Nouvelle Année"</p>
+                                <p class="text-gray-600"><strong>Tenue:</strong> Libre, couleurs vives encouragées</p>
+                                <p class="text-gray-600"><strong>Particularité:</strong> Témoignages de l'année écoulée</p>
+                            </div>
+                            <div class="border-l-4 border-purple-600 pl-4 py-2">
+                                <h4 class="font-bold text-gray-800">Samedi 28 Janvier 2025</h4>
+                                <p class="text-gray-600"><strong>Thème:</strong> "Nouveaux Commencements"</p>
+                                <p class="text-gray-600"><strong>Tenue:</strong> Blanc (symbole de pureté)</p>
+                                <p class="text-gray-600"><strong>Particularité:</strong> Première séance de l'année</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+   
+    <style>
+
+
+.section {
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    background: #ffffff; /* White background for section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque for visibility */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.scale-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scale-hover:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Filter Buttons */
+.media-filter {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    color: #1e3a8a;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.media-filter.active {
+    background: #3B82F6;
+    color: #ffffff;
+}
+
+.media-filter:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    color: #1e3a8a;
+}
+
+.video-modal-content {
+    max-width: 720px;
+    width: 90%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    background: #f1f1f1;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: #e5e5e5;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    p { font-size: 0.875rem; }
+    .text-lg { font-size: 1rem; }
+    .video-modal-content { width: 100%; max-width: 95%; }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { font-size: 1rem; }
+}
+
+/* Mediatheque Section Styling */
+#mediatheque {
+    color: #1e3a8a;
+}
+
+#mediatheque h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e3a8a;
+}
+
+#mediatheque p {
+    color: #374151;
+}
+
+#mediatheque .media-item h3 {
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+#mediatheque .media-item p, #mediatheque .media-item span {
+    color: #374151;
+}
+
+#mediatheque .bg-indigo-100 {
+    background: #f3f4f6; /* Lighter background for resources section */
+    border-radius: 1rem;
+}
+    </style>
+   
+
+
+
+<!-- Mediatheque -->
+    <section id="mediatheque" class="section bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 py-16 sm:py-24 lg:py-32 min-h-screen">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+                <div class="text-center mb-12 sm:mb-16 lg:mb-20 animate__animated animate__fadeInDown">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-wide drop-shadow-lg">Médiathèque</h2>
+                    <p class="text-base sm:text-lg lg:text-xl text-gray-200 max-w-3xl mx-auto font-light">
+                        Explorez nos ressources spirituelles : vidéos inspirantes, galeries photo émouvantes et audios méditatifs pour enrichir votre foi.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-16">
+                    <button class="media-filter glass-card bg-purple-700 text-gray-100 px-5 py-3 rounded-2xl hover:bg-purple-600 transition-all duration-300 transform hover:scale-105 shadow-md" data-filter="videos">
+                        <i class="fas fa-video text-lg mr-2"></i>Vidéos
+                    </button>
+                    <button class="media-filter glass-card bg-emerald-700 text-white px-5 py-3 rounded-2xl hover:bg-emerald-600 transition-all duration-300 transform hover:scale-105 shadow-md active" data-filter="photos">
+                        <i class="fas fa-image text-lg mr-2"></i>Photos
+                    </button>
+                    <button class="media-filter glass-card bg-pink-700 text-gray-100 px-5 py-3 rounded-2xl hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md" data-filter="audio">
+                        <i class="fas fa-headphones text-lg mr-2"></i>Audio
+                    </button>
+                </div>
+
+                <style>
+                    .glass-card {
+                        background: rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+                    .tiktok-card {
+                        height: 600px;
+                        max-height: 100vh;
+                        overflow: hidden;
+                    }
+                    .tiktok-iframe {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 1rem;
+                        object-fit: cover;
+                    }
+                    .photo-card:hover .overlay {
+                        opacity: 1;
+                    }
+                    .overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: rgba(0, 0, 0, 0.5);
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 90%;
+                        max-width: 800px;
+                        max-height: 80vh;
+                        background: #ffffff;
+                        border-radius: 1rem;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                        z-index: 9999;
+                        overflow: hidden;
+                        flex-direction: column;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                    .modal.active {
+                        display: flex;
+                        opacity: 1;
+                    }
+                    .modal img {
+                        max-height: 60vh;
+                        object-fit: contain;
+                    }
+                    .thumbnail-container img.active {
+                        border: 2px solid #3b82f6;
+                    }
+                    .modal-close {
+                        font-size: 1.5rem;
+                        color: #3b82f6;
+                        transition: color 0.3s, transform 0.3s;
+                        padding: 0.5rem;
+                    }
+                    .modal-close:hover {
+                        color: #1e40af;
+                        transform: scale(1.2);
+                        cursor: pointer;
+                    }
+                    .prev-slide, .next-slide {
+                        color: #3b82f6;
+                        font-size: 2.5rem;
+                        font-weight: 900;
+                        background: #ffffff;
+                        border: 2px solid #3b82f6;
+                        border-radius: 50%;
+                        width: 3rem;
+                        height: 3rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background 0.3s;
+                    }
+                    .prev-slide:hover, .next-slide:hover {
+                        background: #e0f2fe;
+                        cursor: pointer;
+                    }
+                    .media-filter.active {
+                        background: #3b82f6 !important;
+                        color: white !important;
+                    }
+                    .modal-header {
+                        background: #ffffff;
+                        color: #3b82f6;
+                        padding: 1rem 1.5rem;
+                        border-bottom: 1px solid #e5e7eb;
+                    }
+                    .modal-footer {
+                        background: #ffffff;
+                        color: #3b82f6;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0.25rem 1rem;
+                        border-top: 1px solid #e5e7eb;
+                    }
+                    #carousel-counter {
+                        color: #3b82f6;
+                        margin-right: 3rem;
+                    }
+                    .photo-count {
+                        background-color: #3b82f6;
+                        color: #ffffff;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: 9999px;
+                        font-weight: 500;
+                    }
+                    @media (max-width: 768px) {
+                        .tiktok-card {
+                            height: 500px;
+                        }
+                        .modal {
+                            width: 95%;
+                            max-height: 90vh;
+                        }
+                        .modal img {
+                            max-height: 50vh;
+                        }
+                        .prev-slide, .next-slide {
+                            font-size: 2rem;
+                            width: 2.5rem;
+                            height: 2.5rem;
+                        }
+                    }
+                    #modal-title {
+                        background-color: #ffffff;
+                        padding: 0.25rem 0.75rem;
+                        border-radius: 0.375rem;
+                        margin-top: 1rem;
+                    }
+                </style>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-16 animate__animated animate__fadeInDown">
+                    <!-- TikTok Videos -->
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7538338331369704710" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7526249079467199800" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7526236850231479608" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7526227075045395768" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7526220046834715910" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7525526129050946822" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7520979551036493061" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7518145382396759352" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7517561424655224070" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7517560146042572038" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7507702710062533944" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="tiktok-card media-item videos glass-card rounded-2xl shadow-2xl transform hover:scale-105 transition-all duration-500 hover:shadow-3xl" data-filter="videos">
+                        <div class="w-full h-full relative">
+                            <iframe loading="lazy" src="https://www.tiktok.com/embed/v2/7504630457087118598" class="tiktok-iframe" frameborder="0" allow="encrypted-media;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Photo Galleries -->
+                    <div class="media-item photos glass-card rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 hover:shadow-3xl photo-card relative" data-filter="photos">
+                        <div class="w-full h-56 overflow-hidden relative">
+                            <img src="Communities_photos/IMG-20250713-WA0004.jpg" alt="Moments de Recueillement" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
+                            <div class="overlay">
+                                <i class="fas fa-eye text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-3">Recueillement</h3>
+                            <p class="text-sm text-gray-300 mb-3">Galerie du 14 Décembre 2025</p>
+                            <div class="flex items-center justify-between">
+                                <span class="photo-count"></span>
+                                <button class="view-photos-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Voir photos</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media-item photos glass-card rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 hover:shadow-3xl photo-card relative" data-filter="photos">
+                        <div class="w-full h-56 overflow-hidden relative">
+                            <img src="Communities_photos/IMG-20250713-WA0015.jpg" alt="Communauté Unie" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black opacity-40"></div>
+                            <div class="overlay">
+                                <i class="fas fa-eye text-white text-3xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-3">Unité</h3>
+                            <p class="text-sm text-gray-300 mb-3">Portraits du 30 Novembre 2025</p>
+                            <div class="flex items-center justify-between">
+                                <span class="photo-count"></span>
+                                <button class="view-photos-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Voir photos</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal pour la galerie -->
+                <div id="photoModal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+                    <div class="flex justify-between items-center p-4 border-b border-gray-200 modal-header">
+                        <h3 id="modal-title" class="text-base font-semibold text-white" style="margin-top: 1rem;"></h3>
+                        <button class="modal-close text-white text-2xl" aria-label="Fermer la galerie">&times;</button>
+                    </div>
+                    <div class="flex-1 p-4 flex items-center justify-center relative">
+                        <button class="prev-slide absolute left-4 text-3xl" aria-label="Image précédente">&larr;</button>
+                        <img id="carousel-image" src="" alt="Galerie Image" class="max-w-full">
+                        <button class="next-slide absolute right-4 text-3xl" aria-label="Image suivante">&rarr;</button>
+                    </div>
+                    <div class="p-4 border-t border-gray-200 flex justify-between items-center modal-footer" style="padding-top: 0.25rem;">
+                        <span id="carousel-counter" class="text-black" style="margin-right: 3rem;"></span>
+                        <div class="flex space-x-4">
+                            <button id="play-pause-btn" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Pause</button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-container p-4 flex space-x-2 overflow-x-auto"></div>
+                </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                        // Define galleries
+                        const galleries = [
+                            {
+                                title: "Recueillement",
+                                date: "14 Décembre 2025",
+                                photos: [
+                                    "Communities_photos/IMG-20250713-WA0004.jpg",
+                                    "Communities_photos/IMG-20250713-WA0005.jpg",
+                                    "Communities_photos/IMG-20250713-WA0006.jpg",
+                                    "Communities_photos/IMG-20250713-WA0010.jpg",
+                                    "Communities_photos/IMG-20250713-WA0011.jpg",
+                                    "Communities_photos/IMG-20250713-WA0012.jpg",
+                                    "Communities_photos/IMG-20250713-WA0013.jpg",
+                                    "Communities_photos/IMG-20250713-WA0014.jpg"
+                                ]
+                            },
+                            {
+                                title: "Unité",
+                                date: "30 Novembre 2025",
+                                photos: [
+                                    "Communities_photos/IMG-20250713-WA0015.jpg",
+                                    "Communities_photos/IMG-20250713-WA0017.jpg",
+                                    "Communities_photos/IMG-20250713-WA0018.jpg",
+                                    "Communities_photos/IMG-20250713-WA0019.jpg",
+                                    "Communities_photos/IMG-20250713-WA0020.jpg",
+                                    "Communities_photos/IMG-20250713-WA0021.jpg",
+                                    "Communities_photos/IMG-20250713-WA0022.jpg",
+                                    "Communities_photos/IMG-20250713-WA0023.jpg",
+                                    "Communities_photos/IMG-20250713-WA0024.jpg"
+                                ]
+                            }
+                        ];
+
+                        const videoUrls = [
+                            "https://www.tiktok.com/embed/v2/7538338331369704710",
+                            "https://www.tiktok.com/embed/v2/7526249079467199800",
+                            "https://www.tiktok.com/embed/v2/7526236850231479608",
+                            "https://www.tiktok.com/embed/v2/7526227075045395768",
+                            "https://www.tiktok.com/embed/v2/7526220046834715910",
+                            "https://www.tiktok.com/embed/v2/7525526129050946822",
+                            "https://www.tiktok.com/embed/v2/7520979551036493061",
+                            "https://www.tiktok.com/embed/v2/7518145382396759352",
+                            "https://www.tiktok.com/embed/v2/7517561424655224070",
+                            "https://www.tiktok.com/embed/v2/7517560146042572038",
+                            "https://www.tiktok.com/embed/v2/7507702710062533944",
+                            "https://www.tiktok.com/embed/v2/7504630457087118598"
+                        ];
+
+                        const modal = document.getElementById('photoModal');
+                        const closeBtn = modal.querySelector('.modal-close');
+                        const prevBtn = modal.querySelector('.prev-slide');
+                        const nextBtn = modal.querySelector('.next-slide');
+                        const imageEl = modal.querySelector('#carousel-image');
+                        const counterEl = modal.querySelector('#carousel-counter');
+                        const thumbnailContainer = modal.querySelector('.thumbnail-container');
+                        const playPauseBtn = document.querySelector('#play-pause-btn');
+                        const filterButtons = document.querySelectorAll('.media-filter');
+                        const mediaItems = document.querySelectorAll('.media-item');
+                        const photoCards = document.querySelectorAll('.photo-card');
+                        const fallbackImage = 'Communities_photos/fallback.jpg';
+
+                        let currentGallery = [];
+                        let currentIndex = 0;
+                        let isPlaying = false;
+                        let slideshowInterval;
+
+                        // Initialize modal as hidden
+                        modal.style.display = 'none';
+                        modal.classList.remove('active');
+                        modal.setAttribute('aria-hidden', 'true');
+                        document.body.style.overflow = 'auto';
+
+                        // Preload images
+                        function preloadImage(url) {
+                            return new Promise((resolve) => {
+                                const img = new Image();
+                                img.src = url;
+                                img.onload = () => resolve(url);
+                                img.onerror = () => resolve(fallbackImage);
+                            });
+                        }
+
+                        // Preload all gallery images
+                        async function preloadGalleries() {
+                            for (const gallery of galleries) {
+                                gallery.preloadedPhotos = await Promise.all(gallery.photos.map(url => preloadImage(url)));
+                            }
+                        }
+
+                        // Update photo count for each gallery
+                        photoCards.forEach((card, index) => {
+                            const photoCountSpan = card.querySelector('.photo-count');
+                            if (photoCountSpan && galleries[index]) {
+                                photoCountSpan.textContent = `${galleries[index].photos.length} photos`;
+                            }
+                        });
+
+                        // Show image at the given index
+                        function showImage(index) {
+                            if (index < 0) index = currentGallery.length - 1;
+                            if (index >= currentGallery.length) index = 0;
+                            currentIndex = index;
+                            imageEl.src = currentGallery[index];
+                            imageEl.alt = `Image ${index + 1}`;
+                            counterEl.textContent = `${index + 1} / ${currentGallery.length}`;
+                            updateThumbnailSelection();
+                        }
+
+                        // Generate thumbnails
+                        function generateThumbnails() {
+                            thumbnailContainer.innerHTML = '';
+                            currentGallery.forEach((url, index) => {
+                                const thumb = document.createElement('img');
+                                thumb.src = url;
+                                thumb.alt = `Miniature ${index + 1}`;
+                                thumb.className = 'w-16 h-16 object-cover rounded cursor-pointer';
+                                if (index === currentIndex) thumb.classList.add('active');
+                                thumb.addEventListener('click', () => {
+                                    showImage(index);
+                                    stopSlideshow();
+                                });
+                                thumb.addEventListener('error', () => thumb.src = fallbackImage);
+                                thumbnailContainer.appendChild(thumb);
+                            });
+                        }
+
+                        // Update thumbnail selection
+                        function updateThumbnailSelection() {
+                            const thumbs = thumbnailContainer.querySelectorAll('img');
+                            thumbs.forEach((thumb, index) => {
+                                thumb.classList.toggle('active', index === currentIndex);
+                            });
+                        }
+
+                        // Start slideshow
+                        function startSlideshow() {
+                            isPlaying = true;
+                            playPauseBtn.textContent = 'Pause';
+                            slideshowInterval = setInterval(() => {
+                                showImage(currentIndex + 1);
+                            }, 3000);
+                        }
+
+                        // Stop slideshow
+                        function stopSlideshow() {
+                            isPlaying = false;
+                            playPauseBtn.textContent = 'Play';
+                            clearInterval(slideshowInterval);
+                        }
+
+                        // Open modal with the gallery
+                        photoCards.forEach((card, index) => {
+                            const button = card.querySelector('.view-photos-btn');
+                            button.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                currentGallery = galleries[index].preloadedPhotos;
+                                currentIndex = 0;
+                                showImage(currentIndex);
+                                generateThumbnails();
+                                modal.style.display = 'flex';
+                                modal.classList.add('active');
+                                modal.setAttribute('aria-hidden', 'false');
+                                modal.querySelector('#modal-title').textContent = galleries[index].title;
+                                startSlideshow();
+                            });
+                        });
+
+                        // Close modal
+                        function closeModal() {
+                            modal.classList.remove('active');
+                            modal.style.display = 'none';
+                            modal.setAttribute('aria-hidden', 'true');
+                            document.body.style.overflow = 'auto';
+                            thumbnailContainer.innerHTML = '';
+                            imageEl.src = '';
+                            stopSlideshow();
+                        }
+
+                        closeBtn.addEventListener('click', closeModal);
+                        modal.addEventListener('click', (e) => {
+                            if (e.target === modal) closeModal();
+                        });
+
+                        prevBtn.addEventListener('click', () => {
+                            showImage(currentIndex - 1);
+                            stopSlideshow();
+                        });
+
+                        nextBtn.addEventListener('click', () => {
+                            showImage(currentIndex + 1);
+                            stopSlideshow();
+                        });
+
+                        playPauseBtn.addEventListener('click', () => {
+                            if (isPlaying) {
+                                stopSlideshow();
+                            } else {
+                                startSlideshow();
+                            }
+                        });
+
+                        document.addEventListener('keydown', (e) => {
+                            if (!modal.classList.contains('active')) return;
+                            if (e.key === 'ArrowLeft') {
+                                showImage(currentIndex - 1);
+                                stopSlideshow();
+                            }
+                            if (e.key === 'ArrowRight') {
+                                showImage(currentIndex + 1);
+                                stopSlideshow();
+                            }
+                            if (e.key === 'Escape') {
+                                closeModal();
+                            }
+                        });
+
+                        // Filter logic
+                        filterButtons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                const filter = button.getAttribute('data-filter');
+                                filterButtons.forEach(btn => btn.classList.remove('active'));
+                                button.classList.add('active');
+                                mediaItems.forEach(item => {
+                                    item.style.display = item.getAttribute('data-filter') === filter ? 'block' : 'none';
+                                });
+                            });
+                        });
+
+                        // Show photos by default
+                        filterButtons.forEach(button => {
+                            if (button.getAttribute('data-filter') === 'photos') {
+                                button.classList.add('active');
+                            }
+                        });
+                        mediaItems.forEach(item => {
+                            item.style.display = item.getAttribute('data-filter') === 'photos' ? 'block' : 'none';
+                        });
+
+                        // Preload galleries on load
+                        preloadGalleries();
+                    });
+                </script>
+            </div>
+    </section>
+
+
+
+
+
+
+    <!-- Blog -->
+    <section id="blog" class="section bg-gray-50 py-20">
+        <iframe src="https://mondedamourdescroyants.blogspot.com/search/label/COMMENT%20DIEU%20R%C3%89COMPENSE-IL%20LA%20FID%C3%89LIT%C3%89%3F" width="100%" height="600" style="border:none;" class="margin-y-8"></iframe>
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Blog & Actualités</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Réflexions spirituelles, actualités et témoignages de notre communauté
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-2 space-y-8">
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                        <div class="bg-gradient-to-r from-blue-400 to-indigo-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-pen-fancy text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calendar-alt text-blue-600 mr-2"></i>
+                                <span class="text-gray-600">18 Décembre 2025</span>
+                                <span class="mx-2 text-gray-400">•</span>
+                                <i class="fas fa-user text-blue-600 mr-2"></i>
+                                <span class="text-gray-600">Dr. Sogbo-Aliho</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">La Force de la Communauté dans la Prière</h3>
+                            <p class="text-gray-600 mb-6">
+                                Depuis le début de nos séances, j'ai pu observer une transformation remarquable dans notre communauté. La prière collective crée des liens qui transcendent les différences sociales et culturelles...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Spiritualité</span>
+                                    <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Communauté</span>
+                                </div>
+                                <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Lire la suite <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                        <div class="bg-gradient-to-r from-purple-400 to-pink-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-heart text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calendar-alt text-purple-600 mr-2"></i>
+                                <span class="text-gray-600">15 Décembre 2025</span>
+                                <span class="mx-2 text-gray-400">•</span>
+                                <i class="fas fa-user text-purple-600 mr-2"></i>
+                                <span class="text-gray-600">Dr. Sogbo-Aliho</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Témoignage : Une Année de Grâce</h3>
+                            <p class="text-gray-600 mb-6">
+                                À l'approche de la fin de l'année, je souhaite partager avec vous les moments de grâce que nous avons vécus ensemble. Chaque séance a été une source d'inspiration et de renouveau...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Témoignage</span>
+                                    <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm">Gratitude</span>
+                                </div>
+                                <button class="text-purple-600 hover:text-purple-800 font-semibold">
+                                    Lire la suite <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                        <div class="bg-gradient-to-r from-green-400 to-teal-600 h-48 flex items-center justify-center">
+                            <i class="fas fa-seedling text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-calendar-alt text-green-600 mr-2"></i>
+                                <span class="text-gray-600">12 Décembre 2025</span>
+                                <span class="mx-2 text-gray-400">•</span>
+                                <i class="fas fa-user text-green-600 mr-2"></i>
+                                <span class="text-gray-600">Dr. Sogbo-Aliho</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Préparer son Cœur pour 2025</h3>
+                            <p class="text-gray-600 mb-6">
+                                Alors que nous approchons de la nouvelle année, il est temps de préparer nos cœurs pour accueillir les bénédictions à venir. La spiritualité nous enseigne l'importance du renouveau...
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Préparation</span>
+                                    <span class="bg-teal-100 text-teal-600 px-3 py-1 rounded-full text-sm">Nouvelle année</span>
+                                </div>
+                                <button class="text-green-600 hover:text-green-800 font-semibold">
+                                    Lire la suite <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-fire mr-2 text-red-600"></i>Articles Populaires
+                        </h3>
+                        <div class="space-y-4">
+                            <a href="#" class="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Les Bienfaits de la Méditation</h4>
+                                    <p class="text-sm text-gray-600">1,234 lectures</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Comment Prier Efficacement</h4>
+                                    <p class="text-sm text-gray-600">987 lectures</p>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-start space-x-3 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">La Paix Intérieure</h4>
+                                    <p class="text-sm text-gray-600">876 lectures</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-tags mr-2 text-blue-600"></i>Catégories
+                        </h3>
+                        <div class="space-y-2">
+                            <a href="#" class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <span class="text-gray-700">Spiritualité</span>
+                                <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">24</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <span class="text-gray-700">Prière</span>
+                                <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded-full text-xs">18</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <span class="text-gray-700">Témoignages</span>
+                                <span class="bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs">12</span>
+                            </a>
+                            <a href="#" class="flex items-center justify-between hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <span class="text-gray-700">Méditation</span>
+                                <span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs">9</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg p-6 text-white">
+                        <h3 class="text-xl font-bold mb-4">
+                            <i class="fas fa-envelope mr-2"></i>Newsletter
+                        </h3>
+                        <p class="mb-4">Recevez nos dernières réflexions et annonces directement dans votre boîte mail.</p>
+                        <div class="space-y-3">
+                            <input type="email" placeholder="Votre email" class="w-full px-4 py-2 rounded-lg text-gray-800">
+                            <button class="w-full bg-white text-orange-600 font-semibold py-2 rounded-lg hover:bg-gray-100 transition-colors">
+                                S'abonner
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    <!-- Communauté -->
+    <section id="communaute" class="section bg-white py-20 mt-12">
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Espace Communautaire</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Échangez, partagez et grandissez ensemble dans la foi
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-2">Média
+                    <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                            <i class="fas fa-comments mr-3 text-blue-600"></i>Discussion Récente
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-blue-600 pl-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">MK</div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Marie Koffi</h4>
+                                        <p class="text-sm text-gray-600">Il y a 2 heures</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">
+                                    "J'aimerais partager avec vous l'impact que les enseignements du docteur ont eu sur ma vie. Depuis que je participe aux séances, j'ai trouvé une paix intérieure que je n'avais jamais connue auparavant."
+                                </p>
+                                <div class="flex items-center space-x-4">
+                                    <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                        <i class="fas fa-thumbs-up mr-1"></i>24 J'aime
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-800 text-sm">
+                                        <i class="fas fa-reply mr-1"></i>Répondre
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="border-l-4 border-green-600 pl-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">JB</div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Jean-Baptiste Akpovi</h4>
+                                        <p class="text-sm text-gray-600">Il y a 4 heures</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">
+                                    "Quelqu'un pourrait-il me rappeler le thème de la séance de samedi prochain ? J'aimerais me préparer spirituellement."
+                                </p>
+                                <div class="flex items-center space-x-4">
+                                    <button class="text-green-600 hover:text-green-800 text-sm">
+                                        <i class="fas fa-thumbs-up mr-1"></i>12 J'aime
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-800 text-sm">
+                                        <i class="fas fa-reply mr-1"></i>Répondre
+                                    </button>
+                                </div>
+                                <div class="mt-4 ml-8 bg-gray-50 rounded-lg p-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="bg-purple-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-3">FD</div>
+                                        <div>
+                                            <h5 class="font-semibold text-gray-800">Félicité Domingo</h5>
+                                            <p class="text-sm text-gray-600">Il y a 3 heures</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 text-sm">
+                                        "Le thème sera 'La Foi qui Transforme'. J'ai hâte de voir comment le docteur va développer ce sujet !"
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="border-l-4 border-purple-600 pl-4">
+                                <div class="flex items-center mb-2">
+                                    <div class="bg-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold mr-3">DA</div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Docteur Adjovi</h4>
+                                        <p class="text-sm text-gray-600">Il y a 6 heures</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-700 mb-3">
+                                    "Chers amis, n'oubliez pas que la séance de samedi sera diffusée en direct pour ceux qui ne peuvent pas être présents physiquement. Le lien sera partagé vendredi soir."
+                                </p>
+                                <div class="flex items-center space-x-4">
+                                    <button class="text-purple-600 hover:text-purple-800 text-sm">
+                                        <i class="fas fa-thumbs-up mr-1"></i>45 J'aime
+                                    </button>
+                                    <button class="text-gray-600 hover:text-gray-800 text-sm">
+                                        <i class="fas fa-reply mr-1"></i>Répondre
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-plus-circle mr-2 text-green-600"></i>Partager quelque chose
+                        </h3>
+                        <div class="space-y-4">
+                            <textarea placeholder="Partagez vos réflexions, vos questions ou vos témoignages..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"></textarea>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <button class="text-blue-600 hover:text-blue-800">
+                                        <i class="fas fa-image mr-1"></i>Photo
+                                    </button>
+                                    <button class="text-green-600 hover:text-green-800">
+                                        <i class="fas fa-video mr-1"></i>Vidéo
+                                    </button>
+                                    <button class="text-purple-600 hover:text-purple-800">
+                                        <i class="fas fa-heart mr-1"></i>Témoignage
+                                    </button>
+                                </div>
+                                <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                    Publier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-users mr-2 text-blue-600"></i>Membres Actifs
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">MK</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Marie Koffi</h4>
+                                    <p class="text-sm text-gray-600">Membre depuis 2024</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs">En ligne</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">JB</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Jean-Baptiste A.</h4>
+                                    <p class="text-sm text-gray-600">Membre depuis 2021</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="bg-yellow-100 text-yellow-600 px-2 py-1 rounded-full text-xs">Absent</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">FD</div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Félicité D.</h4>
+                                    <p class="text-sm text-gray-600">Membre depuis 2024</p>
+                                </div>
+                                <div class="ml-auto">
+                                    <span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs">En ligne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-heart mr-2 text-red-600"></i>Témoignages
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <p class="text-gray-700 text-sm mb-2">
+                                    "Ces séances m'ont aidé à traverser une période difficile de ma vie."
+                                </p>
+                                <p class="text-xs text-gray-600">- Anonyme</p>
+                            </div>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <p class="text-gray-700 text-sm mb-2">
+                                    "J'ai retrouvé l'espoir grâce aux enseignements du docteur."
+                                </p>
+                                <p class="text-xs text-gray-600">- Un participant</p>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Partager mon témoignage
+                        </button>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-calendar-check mr-2 text-green-600"></i>Groupes de Prière
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="border border-gray-200 rounded-lg p-3">
+                                <h4 class="font-semibold text-gray-800">Groupe WhatsApp</h4>
+                                <p class="text-sm text-gray-600">Prières quotidiennes</p>
+                                <button class="mt-2 bg-green-600 text-white px-4 py-1 rounded-lg text-sm hover:bg-green-700 transition-colors">
+                                    Rejoindre
+                                </button>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-3">
+                                <h4 class="font-semibold text-gray-800">Réunion Zoom</h4>
+                                <p class="text-sm text-gray-600">Prières du mercredi</p>
+                                <button class="mt-2 bg-blue-600 text-white px-4 py-1 rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                                    Rejoindre
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+    
+    <!-- Dons -->
+    <!-- <section id="dons" class="section bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Soutenir Notre Mission</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Votre générosité nous aide à maintenir ces séances spirituelles et à toucher plus de vies
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                            <i class="fas fa-heart mr-3 text-red-600"></i>Pourquoi Donner ?
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Équipement Audio/Vidéo</h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Améliorer la qualité des enregistrements et de la diffusion en direct
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Ressources Spirituelles</h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Financer l'impression de livrets de prières et de guides spirituels
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                                    <i class="fas fa-wifi"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Technologie</h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Maintenir le site web et les plateformes de diffusion en ligne
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Aide Communautaire</h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Soutenir les membres de la communauté dans le besoin
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                            <i class="fas fa-credit-card mr-3 text-blue-600"></i>Faire un Don
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-4">Montant Suggéré</h4>
+                                <div class="grid grid-cols-2 gap-3 mb-6">
+                                    <button class="donation-amount border-2 border-gray-300 rounded-lg py-3 px-4 text-center hover:border-blue-600 hover:bg-blue-50 transition-colors" data-amount="5000">
+                                        5 000 FCFA
+                                    </button>
+                                    <button class="donation-amount border-2 border-gray-300 rounded-lg py-3 px-4 text-center hover:border-blue-600 hover:bg-blue-50 transition-colors" data-amount="10000">
+                                        10 000 FCFA
+                                    </button>
+                                    <button class="donation-amount border-2 border-gray-300 rounded-lg py-3 px-4 text-center hover:border-blue-600 hover:bg-blue-50 transition-colors" data-amount="25000">
+                                        25 000 FCFA
+                                    </button>
+                                    <button class="donation-amount border-2 border-gray-300 rounded-lg py-3 px-4 text-center hover:border-blue-600 hover:bg-blue-50 transition-colors" data-amount="50000">
+                                        50 000 FCFA
+                                    </button>
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 font-semibold mb-2">Montant personnalisé</label>
+                                    <input type="number" id="custom-amount" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Montant en FCFA">
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 font-semibold mb-2">Fréquence</label>
+                                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option>Don unique</option>
+                                        <option>Don mensuel</option>
+                                        <option>Don trimestriel</option>
+                                        <option>Don annuel</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-4">Méthode de Paiement</h4>
+                                <div class="space-y-3 mb-6">
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                        <input type="radio" name="payment" class="mr-3">
+                                        <i class="fas fa-mobile-alt text-green-600 mr-3"></i>
+                                        <span class="text-gray-700">MTN Mobile Money</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                        <input type="radio" name="payment" class="mr-3">
+                                        <i class="fas fa-mobile-alt text-orange-600 mr-3"></i>
+                                        <span class="text-gray-700">Moov Money</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                        <input type="radio" name="payment" class="mr-3">
+                                        <i class="fas fa-university text-blue-600 mr-3"></i>
+                                        <span class="text-gray-700">Virement bancaire</span>
+                                    </label>
+                                    <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                        <input type="radio" name="payment" class="mr-3">
+                                        <i class="fas fa-money-bill-wave text-green-600 mr-3"></i>
+                                        <span class="text-gray-700">Don en espèces</span>
+                                    </label>
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 font-semibold mb-2">Nom (optionnel)</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre nom">
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 font-semibold mb-2">Email (optionnel)</label>
+                                    <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="votre@email.com">
+                                </div>
+                                <div class="mb-6">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3">
+                                        <span class="text-gray-700 text-sm">Don anonyme</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-heart mr-2"></i>Faire un Don
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-chart-line mr-2 text-green-600"></i>Impact de vos Dons
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Équipement</span>
+                                <span class="text-green-600 font-semibold">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Ressources</span>
+                                <span class="text-blue-600 font-semibold">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Technologie</span>
+                                <span class="text-purple-600 font-semibold">15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Aide communautaire</span>
+                                <span class="text-orange-600 font-semibold">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-orange-600 h-2 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-users mr-2 text-blue-600"></i>Donateurs Récents
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Anonyme</span>
+                                <span class="text-green-600 font-semibold">25 000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Marie K.</span>
+                                <span class="text-blue-600 font-semibold">10 000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Jean-Baptiste A.</span>
+                                <span class="text-purple-600 font-semibold">15 000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Anonyme</span>
+                                <span class="text-orange-600 font-semibold">5 000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-store mr-2 text-orange-600"></i>Boutique Spirituelle
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Découvrez nos livres et ressources spirituelles rédigés par le docteur.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Livre "Méditations Quotidiennes"</span>
+                                <span class="text-orange-600 font-semibold">15 000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">Livret "Prières pour la Famille"</span>
+                                <span class="text-orange-600 font-semibold">8 000 FCFA</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-700">CD "Chants Spirituels"</span>
+                                <span class="text-orange-600 font-semibold">12 000 FCFA</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 bg-orange-600 text-white py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                            <i class="fas fa-shopping-cart mr-2"></i>Voir la Boutique
+                        </button>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-shield-alt mr-2 text-green-600"></i>Transparence
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Nous nous engageons à une transparence totale dans l'utilisation de vos dons.
+                        </p>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span class="text-gray-700 text-sm">Rapport mensuel des dépenses</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span class="text-gray-700 text-sm">Reçu fiscal pour tous les dons</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-600 mr-2"></i>
+                                <span class="text-gray-700 text-sm">Audit annuel indépendant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact -->
+    <section id="contact" class="section bg-gray-50 py-20 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">Contactez-Nous</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nous sommes à votre écoute pour toute question, prière ou demande d'information
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-envelope mr-3 text-blue-600"></i>Envoyez-nous un Message
+                    </h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Nom *</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">Email *</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="votre@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Téléphone</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+229 XX XX XX XX">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Sujet</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option>Choisir un sujet</option>
+                                <option>Demande d'information</option>
+                                <!-- <option>Demande de prière</option> -->
+                                <option>Suggestion</option>
+                                <option>Témoignage</option>
+                                <option>Problème technique</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-32" placeholder="Votre message..."></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-gray-700 text-sm">J'accepte d'être recontacté(e) par email</span>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>Envoyer le Message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2 text-red-600"></i>Informations Pratiques
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-university text-blue-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Adresse</h4>
+                                    <p class="text-gray-600">
+                                        Université de Sogbo-Aliho<br>
+                                        <!-- Amphithéâtre Principal -->
+                                         Salle 200 places
+                                        <br>
+                                        Abomey, Bénin
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-clock text-green-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Horaires des Séances</h4>
+                                    <p class="text-gray-600">
+                                        Samedi : 15h00 - 17h00<br>
+                                        Accueil : 14h45
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-phone text-purple-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Téléphone</h4>
+                                    <p class="text-gray-600">
+                                        +229 01 66 56 46 05<br>
+                                        (Disponible du lundi au vendredi)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-envelope text-orange-600 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">
+                                        seances@sogbo-aliho.edu.bj<br>
+                                        priere@sogbo-aliho.edu.bj
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bloc principal avec style et ombre -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                    
+                    <!-- Titre de la section -->
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">
+                        <i class="fas fa-share-alt mr-2 text-blue-600"></i>Suivez-nous
+                    </h3>
+
+                    <!-- Grille de deux colonnes pour les boutons -->
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <!-- Lien vers WhatsApp : ouvre dans un nouvel onglet -->
+                        <a href="https://wa.me/2290166564605" target="_blank" 
+                        class="flex items-center justify-center space-x-2 bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                        </a>
+
+                        <!-- Lien vers TikTok : ouvre dans un nouvel onglet -->
+                        <a href="https://www.tiktok.com/@cit.du.dieu.vivan?referer_url=localhost%3A3000%2F&refer=embed&embed_source=121374463%2C121468991%2C121439635%2C121749182%2C121433650%2C121404359%2C121497414%2C121477481%2C121351166%2C121811500%2C121896267%2C121860360%2C121487028%2C121331973%2C120811592%2C120810756%2C121885509%3Bnull%3Bembed_masking&referer_video_id=7538338331369704710" 
+                        target="_blank"
+                        class="flex items-center justify-center space-x-2 bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition-colors">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                        </a>
+
+                    </div>
+                    </div>
+
+
+                    <!-- <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-hands-praying mr-2 text-blue-600"></i>Demande de Prière
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Vous traversez une période difficile ? Partagez votre demande de prière avec notre communauté.
+                        </p>
+                        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-24 mb-4" placeholder="Partagez votre demande de prière..."></textarea>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" class="mr-3">
+                            <span class="text-gray-700 text-sm">Demande anonyme</span>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-heart mr-2"></i>Envoyer la Demande
+                        </button>
+                    </div> -->
+
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">
+                            <i class="fas fa-clock mr-2 text-green-600"></i>Heures d'Ouverture
+                        </h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Lundi - Vendredi</span>
+                                <span class="text-gray-600">8h00 - 17h00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Samedi (Séance)</span>
+                                <span class="text-green-600 font-semibold">14h45 - 17h15</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Dimanche</span>
+                                <span class="text-gray-600">Fermé</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-pray text-2xl text-blue-400 mr-3"></i>
+                        <span class="text-xl font-bold">Séances de Prière</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Université de Sogbo-Aliho, Abomey, Bénin. Un lieu d'inspiration spirituelle et de communion fraternelle.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div>
+                    <h3 class="text-lg font-semibold mb-4">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#apropos" class="text-gray-400 hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#calendrier" class="text-gray-400 hover:text-white transition-colors">Calendrier</a></li>
+                        <li><a href="#mediatheque" class="text-gray-400 hover:text-white transition-colors">Médiathèque</a></li>
+                        <li><a href="#inscription" class="text-gray-400 hover:text-white transition-colors">Inscription</a></li>
+                    </ul>
+                </div> -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Ressources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Téléchargements</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guides spirituels</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Prières audio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Livres recommandés</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2">
+                        <p class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Université de Sogbo-Aliho, Abomey
+                        </p>
+                        <p class="text-gray-400">
+                            <i class="fas fa-phone mr-2"></i>
+                            +229 01 66 56 46 05
+                        </p>
+                        <p class="text-gray-400">
+                            <i class="fas fa-envelope mr-2"></i>
+                            seances@sogbo-aliho.edu.bj
+                        </p>
+                        <p class="text-gray-400">
+                            <i class="fas fa-clock mr-2"></i>
+                            Samedi 15h00 - 17h00
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Séances de Prière - Université de Sogbo-Aliho. Tous droits réservés.
+                </p>
+                <div class="mt-4 space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Conditions d'utilisation</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+<script>
+function showPrayerSection(sectionId) {
+    const sections = document.querySelectorAll('.section');
+    const navItems = document.querySelectorAll('.nav-link');
+    const mobileNavItems = document.querySelectorAll('#mobile-menu a');
+
+    // Hide all sections and remove active classes
+    sections.forEach(section => {
+        section.classList.remove('active', 'fade-in');
+        section.style.display = 'none';
+    });
+
+    navItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    mobileNavItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Show target section with fade-in effect
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        targetSection.style.display = 'block';
+        setTimeout(() => {
+            targetSection.classList.add('active', 'fade-in');
+        }, 10);
+    }
+
+    // Highlight active nav items
+    const targetNavItem = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+    const targetMobileNavItem = document.querySelector(`#mobile-menu a[href="#${sectionId}"]`);
+    if (targetNavItem) targetNavItem.classList.add('active');
+    if (targetMobileNavItem) targetMobileNavItem.classList.add('active');
+
+    // Smooth scroll to section
+    window.scrollTo({ top: targetSection ? targetSection.offsetTop - 80 : 0, behavior: 'smooth' });
+
+    // Close mobile menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenu && mobileMenuBtn) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.classList.remove('open');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('open');
+                mobileMenuBtn.classList.toggle('open');
+                console.log('Mobile menu toggled. Hidden:', mobileMenu.classList.contains('hidden'), 'Open:', mobileMenu.classList.contains('open'));
+            }
+        });
+    }
+
+    // Add click event listeners for navigation links and buttons
+    document.querySelectorAll('.nav-link, #mobile-menu a, button[onclick*="showPrayerSection"]').forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault();
+            const sectionId = element.getAttribute('href')?.substring(1) || element.getAttribute('onclick').match(/'([^']+)'/)[1];
+            showPrayerSection(sectionId);
+        });
+    });
+
+    // Load default section
+    showPrayerSection('accueil');
+});
+</script>
+
+<script src="gallery.js"></script>
+
+
+</body>
+</html>
